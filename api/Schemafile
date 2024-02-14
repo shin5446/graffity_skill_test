@@ -9,3 +9,19 @@ create_table "users", force: :cascade do |t|
   t.datetime "updated_at", null: false
   t.index ["email"], name: "index_users_on_email", unique: true
 end
+
+create_table "consume_items", force: :cascade do |t|
+  t.string "name"
+  t.integer "kind"
+  t.bigint "itemable_id"
+  t.string "itemable_type"
+  t.timestamps
+end
+
+create_table "weapon_items", force: :cascade do |t|
+  t.string "name"
+  t.integer "kind"
+  t.bigint "itemable_id"
+  t.string "itemable_type"
+  t.timestamps
+end
