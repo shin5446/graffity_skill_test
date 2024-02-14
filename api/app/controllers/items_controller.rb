@@ -13,8 +13,13 @@ class ItemsController < ApplicationController
       render json: { errors: item.errors.full_messages }, status: :unprocessable_entity
     end
   end
-end
 
-def add_params
-  params.permit(:user_id, :item_type, :item_name)
+  def lottery
+    treasure_box = TreasureBox.find(params[:treasure_box_id])
+
+    # 抽選ロジック
+    items = treasure_box.lottery_items
+
+    render json: items
+  end
 end

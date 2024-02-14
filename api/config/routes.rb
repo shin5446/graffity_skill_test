@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'user', to: 'users#show'
   # アイテム関連
   post 'item/add', to: 'items#add'
+  get 'item/lottery', to: 'items#lottery'
 end
